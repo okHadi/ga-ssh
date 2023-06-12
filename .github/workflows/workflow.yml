@@ -5,5 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          detached: true
+      - name: EXTRA STEP
+        run: |
+          echo "This is an extra step"
+          echo "This is another extra step"
+          sleep 10
